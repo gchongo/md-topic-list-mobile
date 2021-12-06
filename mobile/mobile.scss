@@ -1,54 +1,41 @@
-.md-tlm {
-    width: 100%;
-    display: flex;
-    .tlm-title {
-        width: calc(100% - 55px);
-        .main-link {
-            width: auto;
-            a.title {
-                padding: 0.5em 0 0.2em 0;
-            }
-        }
-        .badge-notification {
-            font-size: 0.8500em;
-        }
-        .topic-excerpt {
-            width: auto;
+.topic-list {
+    .topic-list-data {
+        max-width: 100%;
+        display: flex;
+    }
+    .right {
+        margin-left: 0;
+        display: inline-block;
+        width: calc(100% - 60px);
+    }
+    .main-link {
+        width:100%;
+        a.title {
+            padding: .5em 0 .5em 0;
         }
     }
     .topic-item-stats {
-        .category {
-            float: none;
-            display: inline-flex;
+        .comments {
+            display: inline-block;
+            font-size: .8706em;
+            margin-left: 3px;
         }
-        .badge-wrapper.bullet {
-            margin-right: 8px;
-        }
-    }
-    .tl-replies {
-        font-size: .8706em;
-        display: inline-flex;
-        vertical-align: -0.125em;
-        .fa.d-icon.d-icon-far-comment.svg-icon.svg-string {
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-        }
-		a {
-            margin: -1px 0 0 4px;
+        .discourse-tags::before {
+            content: "🔖";
+            margin-left: 5px;
+            margin-right: 2px;
         }
     }
-    .discourse-tags::before {
-        content: "🔖";
-        margin-left: 5px;
-        margin-right: 2px;
-    }
-    .tlm-right {
+    .pull-right {
         width: 55px;
-        text-align: center;
         margin: auto 0;
-        .num.activity a {
-            padding: 0;
-            font-size: 0.850em;
+        .last-post-avatar {
+            display: block;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        .relative-date {
+            font-size: 0.90em;
         }
     }
 }

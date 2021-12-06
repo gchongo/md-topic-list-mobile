@@ -1,47 +1,53 @@
 <script type='text/x-handlebars' data-template-name='mobile/list/topic-list-item.hbr'>
-<td>
+<td class="topic-list-data">
   {{~raw-plugin-outlet name="topic-list-before-columns"}}
-  <div class="md-tlm">
-	<div class='tlm-title'>
+  <div class='right'>
+    <div>
+        {{!--
+          The `~` syntax strip spaces between the elements, making it produce
+          `<a class=topic-post-badges>Some text</a><span class=topic-post-badges>`,
+          with no space between them.
+          This causes the topic-post-badge to be considered the same word as "text"
+          at the end of the link, preventing it from line wrapping onto its own line.
+        --}}
+        {{~raw-plugin-outlet name="topic-list-before-link"}}
         <div class='main-link'>
-		{{~raw-plugin-outlet name="topic-list-before-link"}}
-		{{~raw-plugin-outlet name="topic-list-before-status"}}
-		{{~raw "topic-status" topic=topic}}
-		{{~topic-link topic class="raw-link raw-topic-link"}}
-		{{~#if topic.featured_link~}}
-        {{~topic-featured-link topic~}}
-		{{~/if}}
-		{{~raw-plugin-outlet name="topic-list-after-title"}}
-		{{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
-                                   topicId=topic.id 
-                                   unreadClass=unreadClass~}}
-		{{~#if showTopicPostBadges}}
-		{{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
-		{{~/if}}
-        </div>
-		{{~#if expandPinned~}}
+          {{~raw-plugin-outlet name="topic-list-before-status"}}
+          {{~raw "topic-status" topic=topic~}}
+          {{~topic-link topic class="raw-link raw-topic-link"}}
+          {{~#if topic.featured_link~}}
+          {{~topic-featured-link topic~}}
+          {{~/if~}}
+          {{~raw-plugin-outlet name="topic-list-after-title"}}
+          {{~#if topic.unseen~}}
+            <span class="topic-post-badges">&nbsp;<span class="badge-notification new-topic"></span></span>
+          {{~/if~}}
+          {{~#if expandPinned~}}
           {{~raw "list/topic-excerpt" topic=topic~}}
-        {{~/if~}}
+          {{~/if~}}
+        </div>
         <div class="topic-item-stats clearfix">
           {{#unless hideCategory}}
-		  {{~raw-plugin-outlet name="topic-list-before-category"}}
+            {{~raw-plugin-outlet name="topic-list-before-category"}}
             <div class='category'>
               {{category-link topic.category}}
             </div>
           {{/unless}}
-          <div class="tl-replies">{{d-icon "far-comment"}} <a href="{{topic.firstPostUrl}}">{{number topic.replyCount noTitle="true"}}</a></div>
+          <div class="comments">
+            {{d-icon "far-comment"}} <a href="{{topic.firstPostUrl}}">{{number topic.replyCount noTitle="true"}}</a>
+          </div>
           {{discourse-tags topic mode="list"}}
-        <div class="clearfix"></div>
         </div>
-	</div>
-	<div class="tlm-right">
-	  <div class="tl-avatars">
-		<a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="small"}}</a>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="pull-right">
+      <div class="last-post-avatar">
+        <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="small"}}</a>
       </div>
       <div class='num activity last'>
-		<span class="age activity" title="{{topic.bumpedAtTitle}}"><a href="{{topic.lastPostUrl}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a></span>
+        <span class="age activity" title="{{topic.bumpedAtTitle}}"><a href="{{topic.lastPostUrl}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a></span>
       </div>
-	</div>
-  </div>
+    </div>
 </td>
 </script>
