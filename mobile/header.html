@@ -19,9 +19,9 @@
           {{~topic-featured-link topic~}}
           {{~/if~}}
           {{~raw-plugin-outlet name="topic-list-after-title"}}
-          {{~#if topic.unseen~}}
-            <span class="topic-post-badges">&nbsp;<span class="badge-notification new-topic"></span></span>
-          {{~/if~}}
+          {{~#if showTopicPostBadges}}
+		    {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+		  {{~/if}}
           {{~#if expandPinned~}}
           {{~raw "list/topic-excerpt" topic=topic~}}
           {{~/if~}}
