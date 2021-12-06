@@ -39,3 +39,11 @@
         }
     }
 }
+
+// FIX topic-list-item-separator
+
+tr.topic-list-item-separator {
+    .topic-list-data {
+        display: block;
+    }
+}
