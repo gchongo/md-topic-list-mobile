@@ -18,6 +18,11 @@
         font-size: .85em;
     }
     .topic-item-stats {
+		.topic-creator {
+			display: inline-block;
+			font-size: 0.85em;
+			margin-right: 5px;
+		}
         .comments {
             display: inline-block;
             font-size: .8706em;
@@ -42,6 +47,7 @@
         }
     }
 }
+
 
 // FIX topic-list-item-separator
 
