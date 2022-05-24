@@ -18,6 +18,7 @@
         font-size: .85em;
     }
     .topic-item-stats {
+		pointer-events: auto !important;
 		.topic-creator {
 			display: inline-block;
 			font-size: 0.85em;
