@@ -15,7 +15,7 @@
         }
     }
 	.badge-notification {
-        font-size: .85em;
+        font-size: var(--font-down-2);
     }
     .topic-item-stats {
 		pointer-events: auto !important;
