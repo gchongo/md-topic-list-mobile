@@ -12,6 +12,11 @@
         --}}
         {{~raw-plugin-outlet name="topic-list-before-link"}}
         <div class='main-link'>
+	  {{#if bulkSelectEnabled}}
+            <label for="bulk-select-{{topic.id}}">
+                <input type="checkbox" class="bulk-select" id="bulk-select-{{topic.id}}">
+            </label>
+          {{/if}}
           {{~raw-plugin-outlet name="topic-list-before-status"}}
           {{~raw "topic-status" topic=topic~}}
           {{~topic-link topic class="raw-link raw-topic-link"}}
