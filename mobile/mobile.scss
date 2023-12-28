@@ -13,6 +13,9 @@
         a.title {
             padding: .5em 0 .5em 0;
         }
+	label {
+	    display: unset;
+	}
     }
 	.badge-notification {
         font-size: var(--font-down-2);
