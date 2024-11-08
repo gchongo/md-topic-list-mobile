@@ -13,34 +13,30 @@
         a.title {
             padding: .5em 0 .5em 0;
         }
-	label {
-	    display: unset;
-	}
+        label {
+            display: unset;
+        }
     }
-	.badge-notification {
+    .badge-notification {
         font-size: var(--font-down-2);
     }
     .topic-item-stats {
-		pointer-events: auto !important;
-		.topic-creator {
-			display: inline-block;
-			font-size: 0.85em;
-			margin-right: 5px;
-		}
+        pointer-events: auto !important;
+        .topic-creator {
+            display: inline-block;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
         .comments {
             display: inline-block;
             font-size: .8706em;
             margin-left: 3px;
         }
-        .discourse-tags::before {
-            content: "🔖";
-            margin-left: 5px;
-            margin-right: 2px;
-        }
+        /* The discourse-tags::before section has been removed */
     }
-	.topic-excerpt {
-		width: 100%;
-	}
+    .topic-excerpt {
+        width: 100%;
+    }
     .pull-right {
         width: 55px;
         margin: auto 0;
@@ -55,9 +51,7 @@
     }
 }
 
-
 // FIX topic-list-item-separator
-
 tr.topic-list-item-separator {
     .topic-list-data {
         display: block;
