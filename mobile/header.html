@@ -4,7 +4,7 @@
   <div class='right'>
     <div>
         {{!--
-          The `~` syntax strip spaces between the elements, making it produce
+          The `~` syntax strips spaces between the elements, making it produce
           `<a class=topic-post-badges>Some text</a><span class=topic-post-badges>`,
           with no space between them.
           This causes the topic-post-badge to be considered the same word as "text"
@@ -12,7 +12,7 @@
         --}}
         {{~raw-plugin-outlet name="topic-list-before-link"}}
         <div class='main-link'>
-	  {{#if bulkSelectEnabled}}
+          {{#if bulkSelectEnabled}}
             <label for="bulk-select-{{topic.id}}">
                 <input type="checkbox" class="bulk-select" id="bulk-select-{{topic.id}}">
             </label>
@@ -43,7 +43,7 @@
             </div>
           {{/if}}
           <span class="comments">
-            {{d-icon "far-comment"}} <a href="{{topic.firstPostUrl}}">{{number topic.replyCount noTitle="true"}}</a>
+            {{d-icon "eye"}} {{number topic.views numberKey="views_long"}} &nbsp; {{d-icon "far-comment"}} <a href="{{topic.firstPostUrl}}">{{number topic.replyCount noTitle="true"}}</a> &nbsp; {{#if hasLikes}}{{d-icon "heart"}} <a href='{{topic.summaryUrl}}'>{{number topic.like_count}}</a>{{/if}}
           </span>
           {{discourse-tags topic mode="list"}}
         </div>
