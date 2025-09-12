@@ -15,7 +15,7 @@ const TopicBadgeMobContent = <template>
         />
 </template>;
 
-const CommentContent = <template>
+const CommentViewsLikesContent = <template>
   <span class="comments">
     {{icon "far-comment"}}
     <a href="{{@outletArgs.topic.firstPostUrl}}">{{number
@@ -23,6 +23,12 @@ const CommentContent = <template>
         noTitle="true"
       }}
     </a>
+  </span>
+  <span class='topic-views'>
+    {{icon "far-eye"}} {{number @outletArgs.topic.views numberKey="views_long"}}
+  </span>
+  <span class='topic-likes'>
+    {{icon "far-heart"}} <a href={{@outletArgs.topic.summaryUrl}}>{{number @outletArgs.topic.like_count}}</a>
   </span>
 </template>;
 
@@ -58,7 +64,7 @@ function initialize(api) {
 
   api.renderInOutlet("topic-list-item-mobile-avatar", EmptyContent);
   api.renderInOutlet("topic-list-after-title", TopicBadgeMobContent);
-  api.renderInOutlet("topic-list-after-category", CommentContent);
+  api.renderInOutlet("topic-list-after-category", CommentViewsLikesContent); 
   api.renderAfterWrapperOutlet("topic-list-item", LastPostContent);
 }
 
