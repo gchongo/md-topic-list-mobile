@@ -59,3 +59,22 @@
     }
   }
 }
+
+.topic-views, .topic-likes, .discourse-tags {
+    display: inline-block;
+    font-size: var(--font-down-1);
+    margin-inline: .25em .5em;
+    vertical-align: bottom;
+}
+
+.topic-likes .number, .comments a {
+    color: #909090;
+}/* 修改点赞和浏览量的数字颜色 */
+
+/* 覆盖标签默认左右间距 */
+.topic-views,
+.topic-likes,
+.discourse-tags {
+    /* margin-inline: .25em .5em; */  /* 已注释 */
+    margin: 0 !important;             /* 强制去掉所有外边距 */
+}
