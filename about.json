@@ -1,9 +1,9 @@
 {
-  "name": "MD Topic List Mobile",
+  "name": "MD Topic List Mobile V2",
   "component": true,
-  "license_url": "https://github.com/mondiscourse/md-topic-list-mobile/blob/master/LICENSE",
-  "about_url": "https://www.mon-discourse.fr",
-  "authors": "Steven & Arkshine",
+  "license_url": "https://github.com/gchongo/md-topic-list-mobile-v2/blob/main/LICENSE",
+  "about_url": "https://www.cax.do/",
+  "authors": "Chong & Steven & Arkshine",
   "theme_version": "2.0",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
